@@ -21,7 +21,8 @@ export default class Pokemon extends React.Component {
     e.preventDefault();
     const name = this.refs.name.value;
     const url = this.refs.url.value;
-    axios.post('/api/pokemon', { name, url })
+    const authorization = 'JWT '.concat(localStorage.getItem('token'));
+    axios.post('/api/pokemon', { name, url }, { headers: { authorization } })
     .then((rsp) => {
       this.setState({ pokemon: [...this.state.pokemon, rsp.data.pokemon] });
     });
