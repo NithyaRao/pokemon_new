@@ -1,0 +1,10 @@
+applications:
+- disk_quota: 1024M
+  command: npm start
+  host: pokemonnrdc
+  name: pokemonnrdc
+  path: .
+  domain: app1.cftest.allstate.com
+  instances: 1
+  memory: 256M
+  buildpack: nodejs_buildpack_v1_5_17
